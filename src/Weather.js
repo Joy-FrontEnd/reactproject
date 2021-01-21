@@ -3,14 +3,12 @@ import './Weather.css';
 import FormattedDate from './FormattedDate';
 import axios from "axios";
 
-
 export default function Weather(props){
   const[result, setResult] = useState(false);
   const[weather, setWeather] = useState({});
 
 function showResponse(response){
   console.log(response.data)
-  setResult(true);
   setWeather({ 
   temperature: response.data.main.temp,
   city: response.data.name,
@@ -20,6 +18,7 @@ function showResponse(response){
   clouds: response.data.clouds,
   date: new Date(response.data.dt * 1000),
   });
+  setResult(true);
 }
  if (result) {
 
