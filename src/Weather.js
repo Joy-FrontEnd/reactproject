@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Weather.css';
-import Format from './Format';
+import UpdateDate from './UpdateDate';
 import axios from "axios"
 
 
@@ -37,7 +37,7 @@ function showResponse(response){
     <h1>{weather.city}</h1>
     <ul>
       <li>
-        <Format date={weather.date} />
+        <UpdateDate date={weather.date} />
         </li>
       <li className="text-capitalize">{weather.description}</li>
     </ul>
