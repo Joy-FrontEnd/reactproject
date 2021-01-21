@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './Weather.css'
-
+import './Weather.css';
+import Format from './Format';
 import axios from "axios"
 
 
@@ -9,7 +9,7 @@ export default function Weather(props){
   const[weather, setWeather] = useState({});
 
 function showResponse(response){
-  console.log(response.data)
+  //console.log(response.data)
   setResult(true)
   setWeather({ 
   temperature: response.data.main.temp,
@@ -17,7 +17,8 @@ function showResponse(response){
   description: response.data.weather[0].description,
   humidity: response.data.main.humidity,
   wind: response.data.wind.speed,
-  clouds: response.data.clouds
+  clouds: response.data.clouds,
+  date: new Date(response.data.dt * 1000),
   });
 }
  if (result) {
@@ -35,7 +36,9 @@ function showResponse(response){
     </form>
     <h1>{weather.city}</h1>
     <ul>
-      <li>Wednesday 10:00</li>
+      <li>
+        <Format date={weather.date} />
+        </li>
       <li className="text-capitalize">{weather.description}</li>
     </ul>
      <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly cloudy"></img>
@@ -59,7 +62,7 @@ function showResponse(response){
 
    
  }else{
-  const apiKey = "94aeb23647a570d1a5c48a994d42a9ea";
+  const apiKey = "27254106544dda3c64bca92db98517e7";
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showResponse);
 
