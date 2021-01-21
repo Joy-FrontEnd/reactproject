@@ -18,7 +18,7 @@ function showResponse(response){
   humidity: response.data.main.humidity,
   wind: response.data.wind.speed,
   clouds: response.data.clouds,
-  //date: new Date(response.data.dt * 1000),
+  date: new Date(response.data.dt * 1000),
   });
 }
  if (result) {
@@ -64,7 +64,7 @@ function showResponse(response){
    
  }else{
   const apiKey = "60d3c4153587ef1a61f06dc782608ead";
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showResponse);
 
   return "Results Loading"
