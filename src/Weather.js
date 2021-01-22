@@ -19,6 +19,7 @@ function showResponse(response){
   wind: response.data.wind.speed,
   clouds: response.data.clouds,
   date: new Date(response.data.dt * 1000),
+  icon: response.data.weather[0].icon,
   });
   setResult(true);
 }
@@ -37,7 +38,6 @@ function updateSubmit(event){
 function updateCity(event){
 setCity(event.target.value)
 }
-
 
 
  if (result) {
