@@ -45,10 +45,10 @@ setCity(event.target.value)
   return <div className="weather">      
     <form onSubmit={updateSubmit}>
       <div className="row">
-        <div className = "col-9">
+        <div className = "col-8">
       <input type="search" placeholder="Type a City" className="form-control" autoFocus="on" onChange ={updateCity}/> 
       </div>
-      <div className = "col-3"> 
+      <div className = "col-4"> 
       <input type= "submit" value="Search" className="btn btn-primary w-100" />
       </div>
       </div>

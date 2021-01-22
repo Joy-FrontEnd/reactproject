@@ -13,7 +13,7 @@ function showForecastResponse(response){
   console.log(response.data)
 
 }
-if (result) {
+if (result && props.city === forecast.city.name) {
   return( 
   <div className="WeatherForecast row"> 
     <WeatherForecastDisplay data={forecast.list[0]}/> 
