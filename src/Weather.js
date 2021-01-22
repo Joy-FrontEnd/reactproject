@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Weather.css';
-
+import WeatherForecast from './WeatherForecast';
 import WeatherData from './WeatherData';
 import axios from "axios";
 
@@ -54,6 +54,7 @@ setCity(event.target.value)
       </div>
     </form>
     <WeatherData data={weather} />
+    <WeatherForecast city={weather.city} />
     </div>
  }else{
    searchCity()
