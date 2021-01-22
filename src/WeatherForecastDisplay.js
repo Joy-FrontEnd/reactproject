@@ -5,7 +5,12 @@ export default function WeatherForecastDisplay(props){
   function hours(){
 let date = new Date(props.data.dt * 1000)
 let hours = date.getHours()
-return `${hours}:00`
+if (hours < 10) {
+return hours =`0${hours}:00` 
+}else{
+  return hours = `${hours}:00`
+}
+       
   }
 
   function temperature(){
