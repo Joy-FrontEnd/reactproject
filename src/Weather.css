@@ -18,12 +18,12 @@
 }
 
 .weather span {
-  font-size: 60px;
+  font-size: 40px;
   /* position: relative; */
 }
 
 .weather canvas {
-  height: 60px;
+  height: 40px;
   margin: 10px;
 }
 
