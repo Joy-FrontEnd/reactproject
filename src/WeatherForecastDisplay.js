@@ -9,8 +9,7 @@ if (hours < 10) {
 return hours =`0${hours}:00` 
 }else{
   return hours = `${hours}:00`
-}
-       
+}     
   }
 
   function temperature(){
