@@ -22,12 +22,12 @@ export default function WeatherData(props){
      </div>
 
        <div className="row">
-      <div className="col-6">
+      <div className="col">
         <ul>
           <li>Humidity:{props.data.humidity}%</li>
         </ul>
       </div>
-       <div className="col-6">
+       <div className="col">
         <ul>
           <li>Wind:{props.data.wind}Km/h</li>
         </ul>
